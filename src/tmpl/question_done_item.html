@@ -1,0 +1,37 @@
+
+<p class="question_type"><%= question_type %>题  <span class="score">分值：<%= question_score %></span></p>
+<p class="question_type">得分：<%= student_score %> </p>
+
+
+<p class="question_title"><%= question_name %> </p>
+    <% if( question_type != "简答" &&  question_type != "填空"){ %>
+        <% if( question_type =='判断' ){ %>
+            <pre>对</pre>
+            <pre>错</pre>
+        <%}else{%>
+            <% for (var i = 0; i < choice.length; i++){ %>
+                <% if(i == 0){%> <pre>a:<%- choice[i] %></pre><%}%> 
+                <% if(i == 1){%> <pre>b:<%- choice[i] %></pre><%}%> 
+                <% if(i == 2){%> <pre>c:<%- choice[i] %></pre><%}%> 
+                <% if(i == 3){%> <pre>d:<%- choice[i] %></pre><%}%> 
+                <% if(i == 4){%> <pre>e:<%- choice[i] %></pre><%}%>
+                <% if(i == 5){%> <pre>f:<%- choice[i] %></pre><%}%> 
+                <% if(i == 6){%> <pre>g:<%- choice[i] %></pre><%}%> 
+            <%}%>
+        <%}%>
+
+        <p class="question_type">正确答案:<%=answer%></p>
+        <p class="question_type">你的答案:<%=student_answer%></p>
+    <%}%>
+    
+    <% if( question_type =='简答' ){ %>
+        <p class="question_type">正确答案:</p>
+        <p><%=answer%></p>
+        <p >你的答案:</p>
+        <p class="long_answer"><%=student_answer%></p>
+    <%}%> 
+    <% if( question_type =='填空' ){ %>
+        <p class="question_type">正确答案:<%=answer%></p>
+        <p class="question_type">你的答案:<%=student_answer%></p>
+    <%}%> 
+

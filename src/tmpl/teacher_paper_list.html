@@ -1,0 +1,83 @@
+<a href="#/add_new_paper" class="btn btn-inverse btn-wide add-question">添加试卷</a> 
+
+<table class="table">
+<thead class="thead-inverse">
+    <tr>
+        <th>试卷名称</th>
+        <th>类型</th>
+        <th>试题数</th>
+        <th>开始时间</th>
+        <th>截止时间</th>
+        <th>需要时长(min)</th>
+        <th>总分</th>
+        <th>操作</th>
+    </tr>
+</thead>
+    <tbody>
+    </tbody>
+</table>
+<div class="modal " id="questionModal" tabindex="-1" role="dialog" >
+    <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
+                <h4>修改题目</h4>
+                </div>
+                <div class="modal-body">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                              <label for="title" class="col-lg-4 control-label">题目：</label>
+                              <div class="col-lg-8">
+                                <input type="text" class="form-control" name="title">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="question_type" class="col-lg-4 control-label">类型：</label>
+                              <div class="col-lg-8">
+                                <input type="text" class="form-control" name="question_type">
+                              </div>
+                            </div>
+                            <div class="form-group choice">
+                              <label for="choice" class="col-lg-4 control-label">选项：</label>
+                              <div class="col-lg-8">
+                                 <input type="text" class="form-control" name="choice">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="knowledge_point" class="col-lg-4 control-label">知识点：</label>
+                              <div class="col-lg-8">
+                                <input type="text" class="form-control" name="knowledge_point">
+                              </div>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="answer" class="col-lg-4 control-label">答案：</label>
+                              <div class="col-lg-8">
+                                <input type="text" class="form-control" name="answer">
+                              </div>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="difficulty_level" class="col-lg-4 control-label">难度系数：</label>
+
+                              <div class="col-lg-8">
+                                <input type="radio" name="difficulty_level" value="1"  required>1
+                                <input type="radio" name="difficulty_level" value="2"  required>2
+                                <input type="radio" name="difficulty_level" value="3"  required>3
+                                <input type="radio" name="difficulty_level" value="4"  required>4
+                                <input type="radio" name="difficulty_level" value="5"  required>5
+                              </div>
+                            </div>
+                            <input type="text" style="display: none" class="form-control" name="id" value="0">
+
+                        </form>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button href="#" class="btn" data-dismiss="modal">关闭</button>
+                    <button href="#" class="btn btn-primary save">保存</button>
+                </div>
+            </div>
+    </div>
+</div>
+
+ 
