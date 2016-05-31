@@ -1,6 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
-var pathName = "./src/js";
+var pathName = "./fontend-src/js";
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -10,7 +10,6 @@ var definePlugin = new webpack.DefinePlugin({
     __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'false')),
     __PRERELEASE__: JSON.stringify(JSON.parse(process.env.BUILD_PRERELEASE || 'false'))
 });
-
 
 module.exports = {
     //上下文
@@ -28,7 +27,7 @@ module.exports = {
     },
     //配置输出
     output: {
-        path: path.resolve(__dirname, "dist/js"),
+        path: path.resolve(__dirname, "public/js"),
         filename: '[name].bundle.js?[hash]'
             //publicPath: '/assets/',
             //sourceMapFilename: '[file].map'

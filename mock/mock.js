@@ -4,7 +4,7 @@
 var data = {};
 data.paper_test = [{
     paper_name: "高等数学",
-    paper_type: '自主练习',
+    paper_type: "自主练习",
     paper_id: 1,
     need_time: 60
 }, {
@@ -57,13 +57,7 @@ data.query_score = [{
     paper_type: '自主练习',
     complete_time: "2016-5-3",
     paper_id: 12
-}, {
-    paper_name: "数据结构",
-    score: 100,
-    paper_type: '自主练习',
-    complete_time: "2016-5-3",
-    paper_id: 13
-}, {
+},{
     paper_name: "高等数学",
     score: 100,
     paper_type: '自主练习',
