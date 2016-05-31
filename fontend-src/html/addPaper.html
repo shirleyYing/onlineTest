@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>AddPaper</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+    <!-- Loading Bootstrap -->
+    <link href="../css/flat-ui/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="../css/flat-ui/flat-ui.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/daterangepicker.css" />
+
+</head>
+<body>
+       <style type="text/css">
+        .navbar{
+            padding: 0 60px;
+        }
+       
+        body{
+            background-color: #eee;
+            font-family: "Microsoft YaHei";
+        }
+        .container{
+            background-color: #fff;
+            padding: 20px 30px;
+        }
+        .todo,.table{
+            margin-top: 20px;
+            font-size: 14px!important;
+        }
+        .table td{
+            height:100px;
+            padding: 0;
+            font-family: "Microsoft YaHei";
+
+        }
+        .title{
+            width: 500px;
+            text-align: left;
+        }
+        .operation{
+            margin-right: 10px;
+            width: 50px;
+            height: 40px;
+            padding:0;
+
+        }
+        .paper_name{
+            width: 200px;
+        }
+        td{
+            text-align: center;
+        }
+        .tab-content{
+            padding-top: 20px;
+        }
+        .daterangepicker.dropdown-menu{
+            width: 750px;
+        }
+        .total_score{
+            margin-bottom: 150px;
+        }
+        .question{
+            padding:15px; 
+        }
+        .question_type{
+            font-size: 20px;
+            font-weight: bold;
+            border-bottom: 1px solid #eee;
+        }
+        .choice p{
+            font-size: 14px;
+            margin:0;
+            padding:0;
+        }
+    </style>
+    <nav class="navbar navbar-inverse navbar-lg" role="navigation">
+        <div>
+          <a class="navbar-brand" href="#">在线测试系统</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-7">
+            <ul class="nav navbar-nav">
+                <li><a href="#/quesiton_management">题库管理</a></li>
+                <li><a href="#/paper_management">试卷管理</a></li>
+                <li><a href="#/correct_paper">批改试卷</a></li>
+            </ul>
+          
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人信息<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">修改密码</a></li>
+                <li class="divider"></li>
+                <li><a href="#">退出登录</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+    
+    <div class="container">
+        <ul id="addPaperTab" class="nav nav-tabs">
+           <li class="active">
+              <a href="#basic_info" data-toggle="tab">填写试卷基础信息</a>
+           </li>
+           <li><a href="#addQuestionToPaper" data-toggle="tab">添加试题</a></li>
+           <li><a href="#setScore" data-toggle="tab">试卷预览</a></li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="basic_info">
+                <form class="form-horizontal basic_info" role="form">
+                    <div class="form-group">
+                      <label for="paper_name" class="col-lg-2 control-label">标题：</label>
+                      <div class="col-lg-10">
+                        <input type="text" class="form-control" name="paper_name">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="paper_type" class="col-lg-2 control-label">类型：</label>
+                      <div class="col-lg-10">
+                        <input type="text" class="form-control" name="paper_type">
+                      </div>
+                    </div>
+                    <div class="form-group choice">
+                      <label for="question_number" class="col-lg-2 control-label">题数：</label>
+                      <div class="col-lg-10">
+                         <input type="number" class="form-control" name="question_number">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="course_name" class="col-lg-2 control-label">对应课程：</label>
+                      <div class="col-lg-10">
+                        <input type="text" class="form-control" name="course_name">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reservationtime" class="col-lg-2 control-label">起止时间：</label>
+                        <div class="controls col-lg-6">
+                            <div class="input-prepend input-group">
+                                <span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>
+                                <input type="text"  name="project-time" id="reservationtime" class="form-control" value="2013/01/12 - 2013/12/25"  class="span4"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                      <label for="need_time" class="col-lg-2 control-label">需要时间：</label>
+                      <div class="col-lg-6">
+                            <select name="need_time" data-toggle="select" class="form-control  select select-primary  mrs mbm ">
+                            <option value="30">30</option>
+                            <option value="60">60</option>
+                            <option value="90">90</option>
+                            <option value="120">120</option>
+                            </select>
+                      </div>
+                    </div>
+                    <div class="form-group total_score">
+                      <label for="total_score" class="col-lg-2 control-label">总分值：</label>
+                      <div class="col-lg-10">
+                        <input type="number" class="form-control" name="total_score">
+                      </div>
+                    </div>
+                </form>
+           </div>
+            <div class="tab-pane fade" id="addQuestionToPaper">
+                <table id="table"class="project-table table-striped"data-toggle="table" data-search="true">
+                    <thead>
+                        <th>添加<input type="checkbox" class="checkbox checkbox-inline checkAll"></input></th>
+                        <th>题目</th>
+                        <th>题目类型</th>
+                        <th>答案</th>
+                        <th>知识点</th>
+                        <th>难度</th>
+                    </thead>
+                    <tbody >
+                        <tr>
+                            <td><input type="checkbox" class="checkbox" ></input></td>
+
+                           <td>
+                                print()函数是一个类的常成员函数，它无返回值，下列表示中正确的是()
+                                <div class="choice">
+                                    <p>const void print();</p>
+                                    <p>const void print();</p>
+                                    <p>const void print();</p>
+                                    <p>const void print();</p>
+                                </div>
+                            </td>
+                            <td>单选</td>
+                           
+                            <td>const void print()</td>
+                            <td>c++程序设计</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="checkbox"></input></td>
+
+                            <td>print()函数是一个类的常成员函数，它无返回值，下列表示中正确的是()</td>
+                            <td>单选</td>
+                           
+                            <td>const void print()</td>
+                            <td>c++程序设计</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="checkbox"></input></td>
+
+                            <td>print()函数是一个类的常成员函数，它无返回值，下列表示中正确的是()</td>
+                            <td>单选</td>
+                           
+                            <td>const void print()</td>
+                            <td>c++程序设计</td>
+                            <td>13</td>
+                        </tr>
+                       
+
+
+                    </tbody>
+                </table>
+            </div>
+           <div class="tab-pane fade" id="setScore">
+                <h3>试卷名称 <span class="btn btn-success btn-wide">发布试卷</span></h3>
+                <p class="question_type">单选题</p>
+                <p class="question_title"><span >1.</span>print()函数是一个类的常成员函数，它无返回值，下列表示中正确的是()</p>
+                <pre><input type="radio" name="222" value="a"> const void print();</input></pre>
+               
+                <pre><input type="radio" name="222" value="b"> const void print();</input></pre>
+               
+                <pre><input type="radio" name="222" value="c"> const void print();</input></pre>
+               
+                <pre><input type="radio" name="222" value="d"> const void print();</input></pre>
+                <p class="question_title"><span >1.</span>print()函数是一个类的常成员函数，它无返回值，下列表示中正确的是()</p>
+                <pre><input type="radio" name="222" value="a"> const void print();</input></pre>
+               
+                <pre><input type="radio" name="222" value="b"> const void print();</input></pre>
+               
+                <pre><input type="radio" name="222" value="c"> const void print();</input></pre>
+               
+                <pre><input type="radio" name="222" value="d"> const void print();</input></pre>
+                <p class="question_title"><span >1.</span>print()函数是一个类的常成员函数，它无返回值，下列表示中正确的是()</p>
+                <pre><input type="radio" name="222" value="a"> const void print();</input></pre>
+               
+                <pre><input type="radio" name="222" value="b"> const void print();</input></pre>
+               
+                <pre><input type="radio" name="222" value="c"> const void print();</input></pre>
+               
+                <pre><input type="radio" name="222" value="d"> const void print();</input></pre>
+                <p class="question_type">多选题</p>
+                 <p class="question_title"><span >1.</span>print()函数是一个类的常成员函数，它无返回值，下列表示中正确的是()</p>
+                <pre><input type="radio" name="222" value="a"> const void print();</input></pre>
+               
+                <pre><input type="radio" name="222" value="b"> const void print();</input></pre>
+               
+                <pre><input type="radio" name="222" value="c"> const void print();</input></pre>
+               
+                <pre><input type="radio" name="222" value="d"> const void print();</input></pre>
+
+           </div>
+        </div>
+    </div>
+</body>
+
+    <script src="../js/vender/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/vender/flat-ui.min.js"></script>
+    <script type="text/javascript" src="../js/vender/application.js"></script>
+    <script type="text/javascript" src="../js/vender/moment.min.js"></script>
+    <script type="text/javascript" src="../js/vender/daterangepicker.js"></script>
+    <script src="../js/vender/bootstrap.min.js"></script>
+    <script src="../js/vender/bootstrap-table.js"></script>
+
+
+
+      <script type="text/javascript">
+         $('#reservationtime').daterangepicker({
+            timePicker: false,
+            timePickerIncrement: 30,
+            format: 'YYYY-MM-DD'
+        }, function(start, end, label) {
+            // console.log(start.toISOString(), end.toISOString(), label);
+        });
+         var $inputs =this.$('input[type=checkbox]');
+
+        $.each($inputs,function(index,item){
+            $(item).attr('checked',true);
+            console.log(index);
+            // this.checkedQuestion.push(this.questionData[])
+        });
+      </script>
+</html>

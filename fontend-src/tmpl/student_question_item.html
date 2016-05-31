@@ -1,0 +1,33 @@
+<form>
+    <p class="question_type"><%= question_type %>题  <span class="score">分值：<%= question_score %></span></p>
+    <input style="display: none" name="paper_id" value="<%= paper_id %>">
+
+    <p class="question_title"><%= order_id %>. <%= title %> </p>
+    
+    <% if(choice){ %>
+
+        <% for (var i = 0; i < choice.length; i++){ %>
+            <% if(choice[i].value ){ %>
+
+                <% if( question_type =='多选' ){ %>
+                   <pre><input type="checkbox" name="<%= choice[i].key %>" value=" <%- choice[i].value %>" /> <%- choice[i].value %></pre>
+                <%}else{%>
+               <pre><input type="radio" name="<%= choice[i].key %>" value=" <%- choice[i].value %>" /> <%- choice[i].value %></pre>
+                <%}%>
+            <%}%>
+        <%}%>
+
+    <%}else{ %>
+
+        <% if( question_type =='简答' ){ %>
+            <textarea class="answer_textarea"></textarea>
+        <%}%> 
+
+        <% if( question_type =='填空' ){ %>
+            <input type="text"></input>
+        <%}%> 
+
+    <%}%>      
+</form>
+
+  

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>teacher</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- Loading Bootstrap -->
+    <link href="css/flat-ui/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/daterangepicker.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui/flat-ui.css" rel="stylesheet"></head>
+<body>
+    <style type="text/css">
+        .navbar{
+            padding: 0 60px;
+        }
+        body{
+            background-color: #eee;
+            font-family: "Microsoft YaHei";
+        }
+        .container{
+            background-color: #fff;
+            padding: 20px 30px;
+        }
+        .todo{
+            color: #798795;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+        .todo,.table{
+            margin-top: 20px;
+            font-size: 14px!important;
+        }
+        .table td{
+            height:100px;
+            padding: 0;
+            font-family: "Microsoft YaHei";
+
+        }
+        .title{
+            width: 500px;
+            text-align: left;
+        }
+        .operation{
+            margin-right: 10px;
+            width: 50px;
+            height: 40px;
+            padding:10px 0;
+        }
+        .paper_name{
+            width: 200px;
+        }
+        td{
+            text-align: center;
+        }
+        .tab-content{
+            padding-top: 20px;
+        }
+        .daterangepicker.dropdown-menu{
+            width: 750px;
+        }
+        
+        .question{
+            padding:15px; 
+        }
+        .question_type{
+            font-size: 20px;
+            font-weight: bold;
+            border-bottom: 1px solid #eee;
+        }
+        .choice p{
+            font-size: 14px;
+            margin:0;
+            padding:0;
+''        }
+    </style>
+    <nav class="navbar navbar-inverse navbar-lg" role="navigation">
+        <div>
+            <a class="navbar-brand" href="#">在线测试系统</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-7">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#/question_management">题库管理</a>
+                </li>
+                <li>
+                    <a href="#/paper_management">试卷管理</a>
+                </li>
+                <li>
+                    <a href="#/correct_paper">批改试卷</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        个人信息 <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">修改密码</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">退出登录</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse --> </nav>
+
+    <div class="container"></div>
+
+</body>
+
+    <!-- <script src="http://localhost:8080/webpack-dev-server.js"></script>
+    <script src="http://localhost:8080/vender.bundle.js"></script>
+    <script src="http://localhost:8080/teacher.bundle.js"></script> -->
+<!-- 
+    <script src="http://localhost:8080/vender/jquery.min.js"></script>
+    <script src="http://localhost:8080/vender/backbone-min.js"></script>
+    <script src="http://localhost:8080/vender/flat-ui.min.js"></script>
+    <script src="http://localhost:8080/vender/application.js"></script>   
+
+ -->
+     <!--  <script src="vender/jquery.min.js"></script>
+<script src="vender/flat-ui.min.js"></script>
+<script src="vender/application.js"></script>
+
+<script src="vender/bootstrap.min.js"></script>
+-->
+    <script src="js/vender.bundle.js"></script>
+    <script src="js/teacher.bundle.js"></script>
+</html>

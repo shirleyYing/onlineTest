@@ -1,0 +1,13 @@
+<p class="total_score"><span>总分：</span></p>
+<form class="form-horizontal set-score-form" role="form">
+    <%for(var i = 0;i<data.length;i++){%>
+    <div class="form-group ">
+        <p><%=data[i].question_type%>:共<span><%=data[i].number%></span>题,该类型题总分值：<span  class="<%=data[i].question_type%>"></span>分</p>
+        <label for="<%=data[i].question_type%>" class="col-lg-2 control-label">单题分值:</label>
+        <div class="col-lg-6">
+            <input type="number" class="form-control" name="<%=data[i].question_type%>" />
+        </div>
+    </div>
+    <%}%>
+</form>
+    <button class="btn btn-primary btn-wide calculate">计算总分</button>

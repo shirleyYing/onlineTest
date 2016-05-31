@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>答题</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+    <link href="../css/flat-ui/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/flat-ui/flat-ui.css" rel="stylesheet">
+</head>
+<body>
+<style type="text/css">
+
+    body{
+        background-color: #eee;
+        font-family: "Microsoft YaHei";
+    }
+    .container{
+        background-color: #fff;
+        padding:0;
+    }
+    .reminding{
+        border-radius: 3px;
+        height: 80px;
+
+    }
+    .complete_progress{
+        height: 80px;
+        width: 78%;
+        padding:35px 50px;
+        background-color: #34495e;
+        float: left;
+    }
+    .time{
+        height: 80px;
+        width: 22%;
+        float: left;
+        background-color: #2c3e50;
+    }
+    .question{
+        padding:15px; 
+    }
+    .question_type{
+        font-size: 20px;
+        font-weight: bold;
+        border-bottom: 1px solid #eee;
+    }
+    .question_options{
+        height: 300px;
+        width: 1000px;
+        margin: 0 auto;
+        border:solid 1px #eee;
+        background-color: #fff;
+        border-radius: 3px;
+    }
+   
+    pre{
+        cursor: pointer;
+        font-size: 16px;
+        padding-left: 20px;
+    }
+    pre:hover{
+        background-color: #eee;
+        border-color: #999;        
+    }
+    input[type=radio],input[type=checkbox]{
+        vertical-align: text-top;
+
+    }
+    input[type=text]{
+        border-color: transparent;
+        border-bottom: 1px solid #34495e;
+        outline: none;
+    }
+    .operation{
+        float: right;
+        margin-bottom: 20px;
+    }
+    .answer_textarea{
+        width: 1000px;
+        height: 500px;
+    }
+    .time{
+        color:#fff;
+        font-weight: 500;
+        padding: 20px;
+
+        
+    }
+    .hour,.min,.sec{
+        display: inline-block;
+        width:20px;
+        height: 40px;
+        font-size: 30px;
+        line-height: 40px;
+        margin-right:20px;
+        margin-left: 10px;
+    }
+    .pause{
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: -2px;
+        height: 28px;
+        width: 28px;
+        /*margin-right: 5px;*/
+        background: url(../../assets/images/pause.png) 0 -96px no-repeat;
+    }
+    .brief {
+        margin: 0 auto;
+        padding:10px 20px;
+
+    }
+    .paper_detail{
+        padding-left: 20px;
+    }
+</style>
+    <nav class="navbar navbar-inverse navbar-lg" role="navigation">
+        <div>
+          <a class="navbar-brand" href="#">在线测试系统</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-7">
+          <ul class="nav navbar-nav">
+            <li><a href="#/special_test">专项练习</a></li>
+            <li><a href="#/paper_test">试卷练习</a></li>
+            <li><a href="#/query_score">成绩查询</a></li>
+            <li><a href="#/error_review">错题回顾</a></li>
+           </ul>
+          
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人信息<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">修改密码</a></li>
+                <li class="divider"></li>
+                <li><a href="#">退出登录</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+    <div class="container">
+        <div class="paper_detail">
+            <p >paper name</p>
+            <p >score</p>
+
+        </div>
+        
+        <div class="brief">
+            <button class="btn btn-success"> 1</button>
+            <button class="btn btn-success"> 1</button>
+            <button class="btn btn-success"> 1</button>           
+        </div>
+        <!-- .reminding end -->
+        <div class="question">
+                <p class="question_type">正确答案:A</p>
+                <p class="question_type">你的答案:B</p>
+
+                <p class="question_title"><span >1.</span>print()函数是一个类的常成员函数，它无返回值，下列表示中正确的是()</p>
+                <pre>A: const void print();</pre>
+                <pre>B: const void print();</pre>
+                <pre>C: const void print();</pre>
+                <pre>D: const void print();</pre>  
+        </div>
+            <form>
+                <p class="question_type">多选题</p>
+                <p class="question_title"><span>1.</span>print()函数是一个类的常成员函数，它无返回值，下列表示中正确的是()</p>
+
+                <pre><input type="checkbox" name="222" value="b"> const void print();</input></pre>
+               
+                <pre><input type="checkbox" name="222" value="c"> const void print();</input></pre>
+               
+                <pre><input type="checkbox" name="222" value="d"> const void print();</input></pre>
+
+                <div class="operation">
+                    <button class="btn btn-danger btn-wide"> 提前交卷</button>
+                    <button class="btn btn-success btn-wide"> 下一题</button>
+                </div>  
+            </form>
+            <form>
+                <p class="question_type">填空题</p>
+                <p class="question_title">1.java中的基础数据类型有<input type="text"></input></p>
+
+                <div class="operation">
+                    <button class="btn btn-danger btn-wide"> 提前交卷</button>
+                    <button class="btn btn-success btn-wide"> 下一题</button>
+                </div>  
+            </form>
+            <form>
+                <p class="question_type">判断题</p>
+                <p class="question_title"><span >1.</span>print()函数是一个类的常成员函数，它无返回值，下列表示中正确的是()</p>
+                <pre><input type="radio" name="222" value="y"> 对 </input></pre>
+               
+                <pre><input type="radio" name="222" value="n"> 错 </input></pre>
+            </form>
+            <form>
+                <p class="question_type">简答题</p>
+                <p class="question_title"><span >1.</span>请用c语言编写冒泡函数</p>
+                <textarea class="answer_textarea">
+                    
+                </textarea>
+            </form>
+        </div>
+    </div>
+</body>
+   <!--  <script src="http://localhost:8080/webpack-dev-server.js"></script>
+    <script src="http://localhost:8080/vender.bundle.js"></script>
+    <script src="http://localhost:8080/student.bundle.js"></script> -->
+</html>

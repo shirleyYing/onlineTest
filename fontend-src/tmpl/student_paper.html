@@ -1,0 +1,28 @@
+
+<div class="tile">
+<% if ( question_number != 0  ) { %>
+    <h3 class="tile-title"><%= course_name %></h3>
+    <p>共<span class="number"> <%= question_number%> </span>题</p> 
+    <a class="btn btn-primary btn-large btn-block" href="#/course/<%= course_id %>">马上开始</a>
+
+<%}else{%>
+
+    <% if ( score!= -1) { %>
+        <h3 class="tile-title"><%= paper_name %></h3>
+        <p class="number">试卷类型: <%= paper_type%></p>
+        <p class="number">完成时间: <%if (!complete_time || complete_time !=''){%><%= complete_time %><%}else{%>未完成<%}%></p>
+        <p class="number">得分: <%if (score > -1){%><%= score %><%}else{%>未完成<%}%></p>
+        <a class="btn btn-primary btn-large btn-block" href="#/student_paper_score/<%= paper_id %>">查看详情</a>      
+    <%}else{%>
+        <h3 class="tile-title"><%= paper_name %></h3>
+        <p><span class="number"> <%= paper_type%> </span></p> 
+        <p>需要<span class="number"> <%= need_time%></span> 分钟</p>
+        <p>截止时间：<span class="number"><%if (end_time!=''){ %> <%= end_time %> <%}else{%> 无<%}%></span></p>
+        <a class="btn btn-primary btn-large btn-block" href="#/paper/<%= paper_id %>">马上开始</a>
+    <%}%>
+<%}%>
+
+
+
+
+</div>

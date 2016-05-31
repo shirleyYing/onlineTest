@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>student</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+    <!-- Loading Bootstrap -->
+    <link href="css/flat-ui/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui/flat-ui.css" rel="stylesheet">
+</head>
+<body>
+    <style type="text/css">
+        .navbar{
+            padding: 0 60px;
+        }
+        .complete-number{
+            font-size: 16px;
+            color:#333;
+        }
+        .row{
+            width: 1140px;
+        }
+        .score{
+            text-align: left;
+            padding: 0 20px;
+        }
+        body{
+            background-color: #eee;
+        }
+        .container{
+            background-color: #fff;
+            padding: 20px 30px;
+        }
+        .question-filter{
+            float: right;
+        }
+    .reminding{
+        border-radius: 3px;
+        height: 80px;
+
+    }
+    .complete_progress{
+        height: 80px;
+        width: 78%;
+        padding:35px 50px;
+        background-color: #34495e;
+        float: left;
+    }
+    .time{
+        height: 80px;
+        width: 22%;
+        float: left;
+        background-color: #2c3e50;
+        color:#fff;
+        font-weight: 500;
+        padding: 20px;
+    }
+    .question{
+        padding:15px; 
+    }
+    .tile .detail{
+        padding-left: 40px;
+        text-align: left;
+    }
+    .question_type{
+        font-size: 20px;
+        font-weight: bold;
+        border-bottom: 1px solid #eee;
+    }
+   
+    .question_options{
+        height: 300px;
+        width: 1000px;
+        margin: 0 auto;
+        border:solid 1px #eee;
+        background-color: #fff;
+        border-radius: 3px;
+    }
+   
+    pre{
+        cursor: pointer;
+        font-size: 16px;
+        padding-left: 20px;
+    }
+    pre:hover{
+        background-color: #eee;
+        border-color: #999;        
+    }
+    input[type=radio],input[type=checkbox]{
+        vertical-align: text-top;
+
+    }
+    input[type=text]{
+        border-color: transparent;
+        border-bottom: 1px solid #34495e;
+        outline: none;
+    }
+    .operation{
+        float: right;
+        margin-bottom: 20px;
+    }
+    .answer_textarea{
+        width: 1000px;
+        height: 500px;
+    }
+   
+    .hour,.min,.sec{
+        display: inline-block;
+        width:20px;
+        height: 40px;
+        font-size: 30px;
+        line-height: 40px;
+        margin-right:20px;
+        margin-left: 10px;
+    }
+    .pause{
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: -2px;
+        height: 28px;
+        width: 28px;
+        /*margin-right: 5px;*/
+        background: url(../../assets/images/pause.png) 0 -96px no-repeat;
+    }
+    .score{
+        color: #C0392B;
+        font-size: 16px;
+    }
+    .brief {
+        margin: 0 auto;
+        padding:10px 20px;
+    }
+    .paper_detail{
+        padding-left: 20px;
+    }
+    .long_answer{
+        width: 1000px;
+        height: 300px;
+        padding: 0 10px;
+        word-wrap: break-word;
+    }
+    </style>
+
+    <nav class="navbar navbar-inverse navbar-lg" role="navigation">
+        <div>
+          <a class="navbar-brand" href="#">在线测试系统</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-7">
+          <ul class="nav navbar-nav">
+            <li><a href="#/special_test">自主练习</a></li>
+            <li><a href="#/paper_test">试卷练习</a></li>
+            <li><a href="#/query_score">成绩查询</a></li>
+           <!--  <li><a href="#/error_review">错题回顾</a></li> -->
+           </ul>
+          
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">登录名：2012211118  角色：学生</a></li>
+            
+          </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+    <div class="paper_list">
+        <div class="container"></div>
+    </div>
+  
+</body>
+   <!--  <script src="http://localhost:8080/webpack-dev-server.js"></script>
+   <script src="http://localhost:8080/vender.bundle.js"></script>
+   <script src="http://localhost:8080/student.bundle.js"></script> -->
+    <script src="js/vender.bundle.js"></script>
+    <script src="js/student.bundle.js"></script>
+</html>
