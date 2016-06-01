@@ -3,9 +3,11 @@ var QuestionCollection = require('./../collections/question_in_paper_collection.
 var StudentPaperCollection = require('./../collections/student_paper_collection.js');
 
 var QuestionItemView = require('./question_item_view.js');
+
 var question_in_paper_tmpl = require('../../tmpl/question_in_paper.html');
 
 var QuestionPaperView = Backbone.View.extend({
+
     className: 'question_paper',
     template: question_in_paper_tmpl,
     events: {
@@ -15,30 +17,28 @@ var QuestionPaperView = Backbone.View.extend({
     initialize: function(id, time) {
         var self = this;
         this.collection = new QuestionCollection();
+        this.index = 1;
+        this.time = time * 60; //need_time
+        this.itemView = null;
+        this.setTime(this.time);
         this.collection.fetch({
             reset: true,
             data: {
                 paperId: id
             },
-            success: function(data) {
+            success: function() {
                 self.render();
+                self.$progress = self.$('.progress-bar');
+                self.setProgress();
             }
         });
-        this.index = 1;
-        this.time = time * 60; //need_time
-        this.itemView = null;
-        this.setTime(this.time);
-        this.$progress = this.$('.progress-bar');
-        this.setProgress();
     },
     render: function() {
         this.$el.html(this.template());
         this.renderItem(this.index);
-
         this.$hour = this.$('.hour');
         this.$min = this.$('.min');
         this.$sec = this.$('.sec');
-
 
         return this;
     },
@@ -52,7 +52,9 @@ var QuestionPaperView = Backbone.View.extend({
         if (this.index === this.collection.length) {
             var $nextButton = this.$('.next');
             $nextButton.html("最后一题");
-            $nextButton.attr({"disabled":"disabled"});
+            $nextButton.attr({
+                "disabled": "disabled"
+            });
         }
 
         var item = this.collection.at(index - 1);

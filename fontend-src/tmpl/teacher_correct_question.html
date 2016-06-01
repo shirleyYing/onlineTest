@@ -1,19 +1,25 @@
     
 <div class="paper_detail">
-    <p>题目：<%= correctQuestion.question.question_name%> </p>
-    <p >分值：<%= correctQuestion.question.question_score %></p>
+    <p>题目：<%= question.question_name%> </p>
+    <p >分值：<%= question.question_score %></p>
 
 </div>
 <div class="question_detail">
     <form class="form-horizontal " role="form">
-    <%for(var j = 0 ;j< correctQuestion.student_answer.length; j++){%>
+    <%for(var j = 0 ;j< student_answer.length; j++){%>
         <div class="form-group">
-            <p><%=correctQuestion.student_answer[j].answer%></p>
-            <label for="<%=correctQuestion.student_answer[j].stunden_id %>" class="col-lg-2 control-label">给分：</label>
-              <div class="col-lg-4">
-                <input type="number" class="form-control" name="<%=correctQuestion.student_answer[j].stunden_id %>">
-              </div>
+            <p>学号:<%=student_answer[j].student_id %></p>
+            <p>学生答案:<%=student_answer[j].answer%></p>
+            
+            <label for="<%=student_answer[j].stunden_id %>" class="col-lg-1 ">给分：</label>
+            <div class="col-lg-4">
+                <input type="number" class="form-control" name="<%=student_answer[j].stunden_id %>">
+            </div>
         </div>
     <%}%>
     </form>
+    <div class="button-operation">
+        <button class="btn btn-danger btn-wide end">结束批改 <a href="#/paper_test" style="color: #fff"></a> </button>
+        <button class="btn btn-success btn-wide next"> 下一题 </button>
+    </div>  
 </div>

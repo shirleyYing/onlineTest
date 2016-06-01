@@ -71,37 +71,6 @@
 <script src="vender/jquery.min.js"></script>
 <script type="text/javascript" src="vender/flat-ui.min.js"></script>
 <script type="text/javascript" src="vender/application.js"></script>
-<script>
-    var local_stroage = window.localStroage;
-    $('.login-button').click(function(){
-        var arr=$('.login-page').serializeArray();
-        var userData={};
-        $.each(arr,function(index,item){
-            userData[item.name] = item.value;
-        });
-        var storage=localStorage;
-        $.ajax({
-            data:userData,
-            url:'/login',
-            method:'post',
-            success:function(data){
-                if(data.data){
-                    storage.userId = userData.name;
-                    var role = userData.role;
-                    if(role==='student'){
-                        location.href="student_index.html";
-                    }else if(role==='teacher'){
-                        location.href="teacher_index.html";
-                    }
-                }else{
-                    alert("用户名或密码错误");
-                }
-            },
-            error:function(err){
-                console.log(err);
-                alert("网络错误");
-            }
-        });
-    });
-</script>
+<script type="text/javascript" src="js/login.js"></script>
+
 </html>

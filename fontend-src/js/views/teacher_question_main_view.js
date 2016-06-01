@@ -33,7 +33,6 @@ var TeacherQuestionMainView = Backbone.View.extend({
     filterQuestion: function(events) {
         var $course = $(event.target);
         var course=$course.find('.todo-name').html();
-        console.log(course);
         this.teacherQuestionListView.trigger('filter',course);
     }
 

@@ -1,5 +1,4 @@
-require('imports?this=>window!./../vender/flat-ui.min.js');
-require('imports?this=>window!./../vender/application.js');
+
 require('imports?this=>window!./../vender/moment.min.js');
 require('../vender/daterangepicker.js');
 

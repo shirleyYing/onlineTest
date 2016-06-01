@@ -1,4 +1,3 @@
-// require('../vender/bootstrap-modal.js');
 require('../vender/bootstrap.min.js');
 var teacher_question_list_tmpl = require('../../tmpl/teacher_question_list.html');
 var TeacherQuestionItemView = require('./teacher_question_item_view.js');

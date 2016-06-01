@@ -9,7 +9,6 @@ var Router = Backbone.Router.extend({
     initialize: function(el) {
         this.$el = $(el);
         this.cleanAppView();
-        // this.currentRouterName = null;
     },
     routes: {
         'paper_management': 'setPaperManagement',
@@ -33,7 +32,6 @@ var Router = Backbone.Router.extend({
         newView.$el.appendTo(this.$el);
     },
     setdefaultView: function(param) {
-        console.log(param);
         if (!param) {
             this.setQuesntionManagementView();
         }

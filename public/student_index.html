@@ -157,7 +157,7 @@
            </ul>
           
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">登录名：2012211118  角色：学生</a></li>
+            <li><a href="#">用户：<span class="name"></span> 角色:<span class="role "></span></a></li>
             
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -167,9 +167,13 @@
     </div>
   
 </body>
-   <!--  <script src="http://localhost:8080/webpack-dev-server.js"></script>
-   <script src="http://localhost:8080/vender.bundle.js"></script>
-   <script src="http://localhost:8080/student.bundle.js"></script> -->
+    <script src="vender/jquery.min.js"></script> 
     <script src="js/vender.bundle.js"></script>
     <script src="js/student.bundle.js"></script>
+    <script type="text/javascript">
+        var $name = $(".name");
+        var $role = $(".role");
+        $name.html(localStorage.userName);
+        $role.html(localStorage.userRole);
+    </script>
 </html>
