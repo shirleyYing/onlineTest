@@ -7,18 +7,19 @@ var user = new User();
 exports.checkLogin = function(req, res) {
     var name = req.body.name;
     var password = req.body.password;
-
     user.getUserPassword(name).then(function(data) {
-        console.log(data[0].password);
-        // console.log(password);
 
         if (data[0].password === password) {
-             res.json({
-                 data: true
-             });
+            var resData={
+                userId:data[0].user_id,
+                userName:data[0].user_name,
+                userRole:data[0].role,
+                judge: true
+             };
+            res.json(resData);
         } else {
             res.json({
-                data: false
+                judge: false
             });
         }
     });

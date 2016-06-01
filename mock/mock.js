@@ -356,17 +356,21 @@ data.teacher_correct_question = [{
         answer: 'print()函数是一个类的常成员函数print()函数是一个类的常成员函数print()函数是一个类的常成员函数'
     }]
 }];
+
 //待改试卷列表
 
 data.teacher_correct_paper = [{
-    paper_name: 'c++程序设计'
-}, {
-    paper_name: 'c++程序设计'
-}, {
-    paper_name: 'c++程序设计'
-}, {
-    paper_name: 'c++程序设计'
-}, {
-    paper_name: 'c++程序设计'
-}];
+    paper_name: 'c语言程序设计',
+    jxb:'A03122308'
+},{
+    paper_name: 'c语言程序设计',
+    jxb:'A03122308'
+},{
+    paper_name: 'c语言程序设计',
+    jxb:'A03122308'
+},{
+    paper_name: 'c语言程序设计',
+    jxb:'A03122308'
+},];
+
 module.exports = data;

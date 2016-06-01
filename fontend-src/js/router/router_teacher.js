@@ -33,7 +33,6 @@ var Router = Backbone.Router.extend({
         newView.$el.appendTo(this.$el);
     },
     setdefaultView: function(param) {
-        console.log(param);
         if (!param) {
             this.setQuesntionManagementView();
         }

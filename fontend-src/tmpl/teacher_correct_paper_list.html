@@ -2,6 +2,7 @@
 <thead class="thead-inverse">
     <tr>
         <th>试卷名称</th>
+        <th>教学班</th>
         <th>操作</th>
     </tr>
 </thead>
@@ -10,6 +11,7 @@
         <%for(var i = 0 ;i< paper.length; i++){%>
         <tr>
             <td><%= paper[i].paper_name%></td>
+            <td><%= paper[i].jxb%></td>
             <td>
                 <a href="#/correct_paper/detail" class="btn btn-primary">批改</a>
             </td>

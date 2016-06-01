@@ -37,7 +37,7 @@ var Router = Backbone.Router.extend({
                 this.setPaperTestView();
                 break;
             case "query_score":
-                this.setQueryScoreView(mockData.query_score);
+                this.setQueryScoreView();
                 break;
             case "error_review":
                 this.setErrorReviewView(mockData.error_review);
@@ -78,6 +78,7 @@ var Router = Backbone.Router.extend({
         var appView = new StudentPaperListView(routerName);
         this.setAppView(appView);
     },
+    //student do the paper
     setPaperQuestionView: function(id, time) {
         var appView = new QuestionPaperView(id, time);
         this.setAppView(appView);
