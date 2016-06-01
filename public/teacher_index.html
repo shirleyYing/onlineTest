@@ -34,11 +34,18 @@
             margin-top: 20px;
             font-size: 14px!important;
         }
+        .button-operation{
+            float: right;
+            margin-bottom: 20px;
+        }
         .table td{
             height:100px;
             padding: 0;
             font-family: "Microsoft YaHei";
 
+        }
+        .table tr th{
+            text-align: center;
         }
         .title{
             width: 500px;
@@ -95,20 +102,7 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        个人信息 <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#">修改密码</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">退出登录</a>
-                        </li>
-                    </ul>
-                </li>
+                <li><a href="#">用户：<span class="name"></span> 角色:<span class="role "></span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse --> </nav>
@@ -118,4 +112,11 @@
 </body>
     <script src="js/vender.bundle.js"></script>
     <script src="js/teacher.bundle.js"></script>
+    <script src="vender/jquery.min.js"></script> 
+    <script type="text/javascript">
+        var $name = $(".name");
+        var $role = $(".role");
+        $name.html(localStorage.userName);
+        $role.html(localStorage.userRole);
+    </script>
 </html>

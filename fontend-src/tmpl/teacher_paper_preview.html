@@ -9,8 +9,6 @@
 <%for(var j = 0 ;j< questions.length; j++){%>
 
     <p class="question_type"><%= questions[j].question_type %>题  <span class="score">分值：<%= questions[j].question_score %></span></p>
-
-
     <p class="question_title"><%= questions[j].title %> </p>
     <% if( questions[j].question_type != "简答" &&  questions[j].question_type != "填空"){ %>
         <% if( questions[j].question_type =='判断' ){ %>

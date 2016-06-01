@@ -16423,21 +16423,40 @@
 	//一张试卷中的要改的题目
 	data.teacher_correct_question = [{
 	    question: {
-	        question_name: "print()函数是一个类的常成员函数，它无返回值,请简要回答",
+	        question_name: "c语言的基础数据类型有那些，请简要回答",
+	        question_score: 10
+	    },
+	    student_answer: [{
+	        student_id: '2012211117',
+	        answer: 'Number，String，Bollean,Array,Object'
+	    },{
+	        student_id: '2012211118',
+	        answer: 'Number，String，Bollean,Array,Object'
+	    },{
+	        student_id: '2012211119',
+	        answer: 'Number，String，Bollean,Array,Object'
+	
+	    },{
+	        student_id: '2012211116',
+	        answer: 'Number，String，Bollean,Array,Object'
+	    }]
+	},{
+	    question: {
+	        question_name: "c程序在内存中存储在哪？计算机的内存空间是如何分区的？分区存放不同数据的目的是什么？",
 	        question_score: 10
 	    },
 	    student_answer: [{
 	        student_id: '2012211119',
-	        answer: 'print()函数是一个类的常成员函数print()函数是一个类的常成员函数print()函数是一个类的常成员函数'
+	        answer: ' C语言程序属于应用程序，程序代码本身存放在应用程序区，程序运行时处理的数据存放在应用程序数据区。 \n计算机的内存空间主要分为3个区：系统程序区、应用程序区和数据区，其中数据区又分为系统程序数据区和应用程序数据区两类。系统程序区主要存放操作系统程序，计算机开机启动时，主要从该区取出程序分析执行；应用程序区主要存放应用程序设计者编制的应用程序；数据区则作为上述两类程序运行时的变量和中间结果的存放空间。 \n程序运行时所需要的不同存储属性的变量将分别分配在这几个数据区和寄存器区。寄存器区在CPU内部，而不在存储器中，所以C语言寄存器型变量的运算速度最快，但是在CPU内部，寄存器非常有限，一般只有几个到几十个，所以C程序的寄存器型变量实际只有几个。 '
 	    },{
 	        student_id: '2012211119',
-	        answer: 'print()函数是一个类的常成员函数print()函数是一个类的常成员函数print()函数是一个类的常成员函数'
+	        answer: 'C语言程序属于应用程序，程序代码本身存放在应用程序区，程序运行时处理的数据存放在应用程序数据区。 \n计算机的内存空间主要分为3个区：系统程序区、应用程序区和数据区，其中数据区又分为系统程序数据区和应用程序数据区两类。系统程序区主要存放操作系统程序，计算机开机启动时，主要从该区取出程序分析执行；应用程序区主要存放应用程序设计者编制的应用程序；数据区则作为上述两类程序运行时的变量和中间结果的存放空间。 \n程序运行时所需要的不同存储属性的变量将分别分配在这几个数据区和寄存器区。寄存器区在CPU内部，而不在存储器中，所以C语言寄存器型变量的运算速度最快，但是在CPU内部，寄存器非常有限，一般只有几个到几十个，所以C程序的寄存器型变量实际只有几个。'
 	    },{
 	        student_id: '2012211119',
-	        answer: 'print()函数是一个类的常成员函数print()函数是一个类的常成员函数print()函数是一个类的常成员函数'
+	        answer: 'C语言程序属于应用程序，程序代码本身存放在应用程序区，程序运行时处理的数据存放在应用程序数据区。 \n计算机的内存空间主要分为3个区：系统程序区、应用程序区和数据区，其中数据区又分为系统程序数据区和应用程序数据区两类。系统程序区主要存放操作系统程序，计算机开机启动时，主要从该区取出程序分析执行；应用程序区主要存放应用程序设计者编制的应用程序；数据区则作为上述两类程序运行时的变量和中间结果的存放空间。 \n程序运行时所需要的不同存储属性的变量将分别分配在这几个数据区和寄存器区。寄存器区在CPU内部，而不在存储器中，所以C语言寄存器型变量的运算速度最快，但是在CPU内部，寄存器非常有限，一般只有几个到几十个，所以C程序的寄存器型变量实际只有几个。'
 	    },{
 	        student_id: '2012211119',
-	        answer: 'print()函数是一个类的常成员函数print()函数是一个类的常成员函数print()函数是一个类的常成员函数'
+	        answer: 'C语言程序属于应用程序，程序代码本身存放在应用程序区，程序运行时处理的数据存放在应用程序数据区。'
 	    }]
 	}];
 	
@@ -16445,17 +16464,9 @@
 	
 	data.teacher_correct_paper = [{
 	    paper_name: 'c语言程序设计',
-	    jxb:'A03122308'
-	},{
-	    paper_name: 'c语言程序设计',
-	    jxb:'A03122308'
-	},{
-	    paper_name: 'c语言程序设计',
-	    jxb:'A03122308'
-	},{
-	    paper_name: 'c语言程序设计',
-	    jxb:'A03122308'
-	},];
+	    jxb:'A03122308',
+	    sum_question:3
+	}];
 	
 	module.exports = data;
 
@@ -16488,14 +16499,13 @@
 	var TeacherQuestionMainView = __webpack_require__(33);
 	var TeacherPaperMainView = __webpack_require__(42);
 	var TeacherPaperNewView = __webpack_require__(49);
-	var TeacherCorrectPaperView = __webpack_require__(63);
-	var TeacherCorrectQuestionView = __webpack_require__(65);
+	var TeacherCorrectPaperView = __webpack_require__(58);
+	var TeacherCorrectQuestionView = __webpack_require__(60);
 	
 	var Router = Backbone.Router.extend({
 	    initialize: function(el) {
 	        this.$el = $(el);
 	        this.cleanAppView();
-	        // this.currentRouterName = null;
 	    },
 	    routes: {
 	        'paper_management': 'setPaperManagement',
@@ -17063,16 +17073,16 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(Backbone, $) {
-	__webpack_require__(55);
-	__webpack_require__(56);
+	__webpack_require__(50);
+	__webpack_require__(51);
 	
 	// var TeacherPaperListView = require('./teacher_paper_list_view.js');
 	
-	var teacher_new_paper_tmpl = __webpack_require__(57);
-	var teacher_set_core_form_tmpl = __webpack_require__(58);
-	var teacher_paper_preview_tmpl = __webpack_require__(59);
-	var TeacherPaperAddQuestionView = __webpack_require__(60);
-	var TeacherPaperAddQuestionView = __webpack_require__(60);
+	var teacher_new_paper_tmpl = __webpack_require__(52);
+	var teacher_set_core_form_tmpl = __webpack_require__(53);
+	var teacher_paper_preview_tmpl = __webpack_require__(54);
+	var TeacherPaperAddQuestionView = __webpack_require__(55);
+	var TeacherPaperAddQuestionView = __webpack_require__(55);
 	var TeacherQuestionListView = __webpack_require__(36);
 	
 	var TeacherPaperNewView = Backbone.View.extend({
@@ -17202,12 +17212,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(4)))
 
 /***/ },
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */,
-/* 54 */,
-/* 55 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*** IMPORTS FROM imports-loader ***/
@@ -17222,7 +17227,7 @@
 	}.call(window));
 
 /***/ },
-/* 56 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {/**
@@ -18248,7 +18253,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 57 */
+/* 52 */
 /***/ function(module, exports) {
 
 	module.exports = function(obj){
@@ -18261,7 +18266,7 @@
 
 
 /***/ },
-/* 58 */
+/* 53 */
 /***/ function(module, exports) {
 
 	module.exports = function(obj){
@@ -18288,7 +18293,7 @@
 
 
 /***/ },
-/* 59 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {module.exports = function(obj){
@@ -18304,7 +18309,7 @@
 	((__t=( questions[j].question_type ))==null?'':__t)+
 	'题  <span class="score">分值：'+
 	((__t=( questions[j].question_score ))==null?'':__t)+
-	'</span></p>\r\n\r\n\r\n    <p class="question_title">'+
+	'</span></p>\r\n    <p class="question_title">'+
 	((__t=( questions[j].title ))==null?'':__t)+
 	' </p>\r\n    ';
 	 if( questions[j].question_type != "简答" &&  questions[j].question_type != "填空"){ 
@@ -18384,13 +18389,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)))
 
 /***/ },
-/* 60 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(Backbone, $) {__webpack_require__(61);
+	/* WEBPACK VAR INJECTION */(function(Backbone, $) {__webpack_require__(56);
 	
 	// var QuestionCollection = require('./../collections/question_in_paper_collection.js');
-	var teacher_question_list2_tmpl = __webpack_require__(62);
+	var teacher_question_list2_tmpl = __webpack_require__(57);
 	var TeacherPaperAddQuestionView = Backbone.View.extend({
 	    className: 'questions',
 	    template: teacher_question_list2_tmpl,
@@ -18474,7 +18479,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(4)))
 
 /***/ },
-/* 61 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {/*** IMPORTS FROM imports-loader ***/
@@ -19964,7 +19969,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 62 */
+/* 57 */
 /***/ function(module, exports) {
 
 	module.exports = function(obj){
@@ -19993,18 +19998,17 @@
 
 
 /***/ },
-/* 63 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(Backbone) {
 	
-	var teacher_correct_paper_list_tmpl = __webpack_require__(64);
+	var teacher_correct_paper_list_tmpl = __webpack_require__(59);
 	
 	var TeacherCorrectPaperView = Backbone.View.extend({
 	    className:'correct-paper-list',
 	    template: teacher_correct_paper_list_tmpl,
 	    initialize: function(data) {
-	
 	        this.render({paper:data});
 	    },
 	    render: function(data) {
@@ -20016,18 +20020,20 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 64 */
+/* 59 */
 /***/ function(module, exports) {
 
 	module.exports = function(obj){
 	var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 	with(obj||{}){
-	__p+='<table class="table">\r\n<thead class="thead-inverse">\r\n    <tr>\r\n        <th>试卷名称</th>\r\n        <th>教学班</th>\r\n        <th>操作</th>\r\n    </tr>\r\n</thead>\r\n    <tbody>\r\n\r\n        ';
+	__p+='<table class="table">\r\n<thead class="thead-inverse">\r\n    <tr class="table-center">\r\n        <th >试卷名称</th>\r\n        <th>教学班</th>\r\n        <th>需该题数</th>\r\n        <th>操作</th>\r\n    </tr>\r\n</thead>\r\n    <tbody>\r\n\r\n        ';
 	for(var i = 0 ;i< paper.length; i++){
 	__p+='\r\n        <tr>\r\n            <td>'+
 	((__t=( paper[i].paper_name))==null?'':__t)+
 	'</td>\r\n            <td>'+
 	((__t=( paper[i].jxb))==null?'':__t)+
+	'</td>\r\n            <td>'+
+	((__t=( paper[i].sum_question))==null?'':__t)+
 	'</td>\r\n            <td>\r\n                <a href="#/correct_paper/detail" class="btn btn-primary">批改</a>\r\n            </td>\r\n        </tr>\r\n        ';
 	}
 	__p+='\r\n    </tbody>\r\n</table>';
@@ -20037,53 +20043,96 @@
 
 
 /***/ },
-/* 65 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(Backbone) {
-	var teacher_correct_question_tmpl = __webpack_require__(66);
+	/* WEBPACK VAR INJECTION */(function(Backbone) {var TeacherCorrectQuestionCollection = __webpack_require__(62);
+	var teacher_correct_question_tmpl = __webpack_require__(61);
 	var TeacherCorrectQuestionView = Backbone.View.extend({
 	    className:'correct-question-list',
+	    collection:TeacherCorrectQuestionCollection,
 	    template: teacher_correct_question_tmpl,
 	    initialize: function(data) {
-	
-	        this.render({correctQuestion:data[0]});
+	        this.index = 0;
+	        this.collection = new TeacherCorrectQuestionCollection(data);
+	        this.render();
 	    },
-	    render: function(data) {
-	        this.$el.html(this.template(data));
+	    events: {
+	        'click .end': 'submitAndEnd',
+	        'click .next': 'getNextSubject'
+	    },
+	    render: function() {
+	        this.$el.html(this.template(this.collection.at(this.index).toJSON()));
 	        return this;
+	    },
+	    
+	    submitAndEnd: function() {
+	        alert('完成试卷');
+	    },
+	    getNextSubject: function() {
+	        this.index ++;
+	        if (this.index <= this.collection.length) {
+	            this.render();
+	        }
 	    }
 	});
 	module.exports = TeacherCorrectQuestionView;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 66 */
+/* 61 */
 /***/ function(module, exports) {
 
 	module.exports = function(obj){
 	var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 	with(obj||{}){
 	__p+='    \r\n<div class="paper_detail">\r\n    <p>题目：'+
-	((__t=( correctQuestion.question.question_name))==null?'':__t)+
+	((__t=( question.question_name))==null?'':__t)+
 	' </p>\r\n    <p >分值：'+
-	((__t=( correctQuestion.question.question_score ))==null?'':__t)+
+	((__t=( question.question_score ))==null?'':__t)+
 	'</p>\r\n\r\n</div>\r\n<div class="question_detail">\r\n    <form class="form-horizontal " role="form">\r\n    ';
-	for(var j = 0 ;j< correctQuestion.student_answer.length; j++){
-	__p+='\r\n        <div class="form-group">\r\n            <p>'+
-	((__t=(correctQuestion.student_answer[j].answer))==null?'':__t)+
-	'</p>\r\n            <label for="'+
-	((__t=(correctQuestion.student_answer[j].stunden_id ))==null?'':__t)+
-	'" class="col-lg-2 control-label">给分：</label>\r\n              <div class="col-lg-4">\r\n                <input type="number" class="form-control" name="'+
-	((__t=(correctQuestion.student_answer[j].stunden_id ))==null?'':__t)+
-	'">\r\n              </div>\r\n        </div>\r\n    ';
+	for(var j = 0 ;j< student_answer.length; j++){
+	__p+='\r\n        <div class="form-group">\r\n            <p>学号:'+
+	((__t=(student_answer[j].student_id ))==null?'':__t)+
+	'</p>\r\n            <p>学生答案:'+
+	((__t=(student_answer[j].answer))==null?'':__t)+
+	'</p>\r\n            \r\n            <label for="'+
+	((__t=(student_answer[j].stunden_id ))==null?'':__t)+
+	'" class="col-lg-1 ">给分：</label>\r\n            <div class="col-lg-4">\r\n                <input type="number" class="form-control" name="'+
+	((__t=(student_answer[j].stunden_id ))==null?'':__t)+
+	'">\r\n            </div>\r\n        </div>\r\n    ';
 	}
-	__p+='\r\n    </form>\r\n</div>';
+	__p+='\r\n    </form>\r\n    <div class="button-operation">\r\n        <button class="btn btn-danger btn-wide end">结束批改 <a href="#/paper_test" style="color: #fff"></a> </button>\r\n        <button class="btn btn-success btn-wide next"> 下一题 </button>\r\n    </div>  \r\n</div>';
 	}
 	return __p;
 	};
 
 
+/***/ },
+/* 62 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(Backbone) {var TeacherCorrectQuestionModel = __webpack_require__(63);
+	
+	var TeacherCorrectQuestionCollection = Backbone.Collection.extend({
+	    model: TeacherCorrectQuestionModel
+	   
+	});
+	
+	module.exports = TeacherCorrectQuestionCollection;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 63 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(Backbone) {var TeacherCorrectQuestionModel = Backbone.Model.extend({
+	
+	});
+	module.exports = TeacherCorrectQuestionModel;
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
 /***/ }
 /******/ ]);
-//# sourceMappingURL=teacher.bundle.js.map?d33c5f0ccb38dc15fe14
+//# sourceMappingURL=teacher.bundle.js.map?dd0b52d59adbd4e2836e

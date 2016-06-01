@@ -9,7 +9,6 @@ var Router = Backbone.Router.extend({
     initialize: function(el) {
         this.$el = $(el);
         this.cleanAppView();
-        // this.currentRouterName = null;
     },
     routes: {
         'paper_management': 'setPaperManagement',

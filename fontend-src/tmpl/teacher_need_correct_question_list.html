@@ -1,9 +1,8 @@
 <table class="table">
 <thead class="thead-inverse">
-    <tr class="table-center">
-        <th >试卷名称</th>
+    <tr>
+        <th>试卷名称</th>
         <th>教学班</th>
-        <th>需该题数</th>
         <th>操作</th>
     </tr>
 </thead>
@@ -13,7 +12,6 @@
         <tr>
             <td><%= paper[i].paper_name%></td>
             <td><%= paper[i].jxb%></td>
-            <td><%= paper[i].sum_question%></td>
             <td>
                 <a href="#/correct_paper/detail" class="btn btn-primary">批改</a>
             </td>
