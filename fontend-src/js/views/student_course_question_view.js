@@ -1,4 +1,4 @@
-var QuestionCollection = require('./../collections/question_in_paper_collection.js');
+var QuestionCollection = require('./../collections/student_question_bank_collection.js');
 
 var QuestionItemView = require('./question_item_view.js');
 var question_in_paper_tmpl = require('../../tmpl/question_in_paper.html');
@@ -11,19 +11,28 @@ var QuestionPaperView = Backbone.View.extend({
         'click .next': 'getNextSubject'
     },
     initialize: function(id, time) {
+        this.id = id;
+
         var self = this;
         this.collection = new QuestionCollection();
         this.collection.fetch({
             reset: true,
             data: {
-                paperId: id
+                knowledge_point: id,
+                difficulty_level:difficulty_level,
+                number:number
             },
             success: function(data) {
                 self.render();
             }
         });
         this.index = 1;
-        this.time = time * 60; //need_time
+        if(time){
+            this.time = time * 60; //need_time
+        }else{
+            this.time = 3600;
+        }
+
         this.itemView = null;
         this.setTime(this.time);
         this.$progress = this.$('.progress-bar');

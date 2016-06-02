@@ -3,7 +3,8 @@ var StudentSpecialTestView = require('./../views/student_special_test_view.js');
 var StudentPaperScoreView = require('./../views/student_paper_score_view.js');
 
 var QuestionPaperView = require('./../views/question_paper_view.js');
-var StudentQuestionCourseView = require('./../views/student_course_question_view.js');
+
+var QuestionCourseView = require('./../views/student_course_question_view.js');
 
 var QuestionPaperDetailView = require('./../views/question_paper_detail.js');
 
@@ -18,13 +19,13 @@ var Router = Backbone.Router.extend({
     },
     routes: {
         'paper/:id/:time': 'setPaperQuestionView',
-        'course/:id/:time': 'setPaperQuestionView',
+        'course/:id/:time': 'setCourseQuestionView',
         'test_result': 'setTestResultView',
         'student_paper_score/:id': 'setQuestionPaperDetailView',
         '*filter': 'setFilter'
     },
-    setFilter: function(param) {
 
+    setFilter: function(param) {
         this.currentRouterName = param || '';
         $('.nav li').removeClass('active');
         if (!this.currentRouterName) {
@@ -45,7 +46,6 @@ var Router = Backbone.Router.extend({
             default:
                 this.setSpecialTestView();
                 break;
-
         }
     },
 
@@ -83,8 +83,8 @@ var Router = Backbone.Router.extend({
         var appView = new QuestionPaperView(id, time);
         this.setAppView(appView);
     },
-    setCourseQuestionView: function(id, time) {
-        var appView = new QuestionPaperView(id, time);
+    setCourseQuestionView: function(id) {
+        var appView = new QuestionCourseView(id, time);
         this.setAppView(appView);
     },
     setQuestionPaperDetailView: function(id) {

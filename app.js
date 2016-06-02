@@ -21,10 +21,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var studentRoute = require('./routes/studentRoute');
 
-// app.get('/studentPaperInfo', studentRoute.getQuestionBank);
+app.post('/login',studentRoute.checkLogin);
+app.get('/getStudentQuestionBankList', studentRoute.getStudentQuestionBankList);
 app.get('/getStudentPaperList', studentRoute.getStudentPaperList);
 app.get('/getPaperQuestion',studentRoute.getPaperQuestion);
-app.post('/login',studentRoute.checkLogin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

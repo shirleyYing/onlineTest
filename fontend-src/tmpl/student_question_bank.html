@@ -7,7 +7,76 @@
             <p><%=types[i].type_name%>:<span class="number"> <%= types[i].count%> </span></p> 
         <%}%>
         
-        <a class="btn btn-primary btn-large btn-block" href="#/course/1/60">马上开始</a>
+        <button class="btn btn-primary btn-large btn-block" data-point = "<%= knowledge_point%>" >马上开始</button>
     </div>
+</div>
+<div class="modal " id="questionModal" tabindex="-1" role="dialog" >
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button class="close close-modal" type="button"  data-dismiss="modal">×</button>
+            <h4>选择条件</h4>
+        </div>
+        <div class="modal-body">
+               
+            <form class="question-filter form-horizontal" role="form">
+                <div class="form-group">
+                    难度系数: <label class="radio radio-inline" for="1">
+                    <input type="radio" name="difficultity_level" data-toggle="radio" value="" id="1" required checked>
+                    1
+                    
+                    </label>
+                    <label class="radio radio-inline" for="2">
+                        <input type="radio" name="difficultity_level" data-toggle="radio" value="" id="10" required>
+                     2
+                     
+                    </label>
+                    <label class="radio radio-inline" for="3">
+                        <input type="radio" name="difficultity_level" data-toggle="radio" value="" id="20" required checked>
+                    3
+                    
+                    </label>
+                     <label class="radio radio-inline" for="4">
+                    <input type="radio" name="difficultity_level" data-toggle="radio" value="" id="30" required checked>
+                    4
+                    
+                  </label>
+                    <label class="radio radio-inline" for="5">
+                    <input type="radio" name="difficultity_level" data-toggle="radio" value="" id="30" required checked>
+                    5
+                    
+                  </label>
+                </div>
+                <div class="form-group">
+                    选择题量:<label class="radio radio-inline" for="5">
+                    <input type="radio" name="question_number" data-toggle="radio" value="" id="5" required checked>
+                    5
+                    
+                    </label>
+                    <label class="radio radio-inline" for="10">
+                        <input type="radio" name="question_number" data-toggle="radio" value="" id="10" required>
+                     10
+                     
+                    </label>
+                    <label class="radio radio-inline" for="20">
+                        <input type="radio" name="question_number" data-toggle="radio" value="" id="20" required checked>
+                    20
+                    
+                    </label>
+                     <label class="radio radio-inline" for="30">
+                    <input type="radio" name="question_number" data-toggle="radio" value="" id="30" required checked>
+                    30
+                    
+                  </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button  class="btn btn-default close-modal" >取消</button>
+            <button  class="btn btn-primary start" data-courseId="">开始</button>
+        </div>
+    </div>
+</div>
 </div>
 
